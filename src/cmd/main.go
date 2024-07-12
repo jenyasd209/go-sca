@@ -23,10 +23,10 @@ func main() {
 	}
 
 	validator := controller.NewBreedValidator()
-	//err = validator.Init()
-	//if err != nil {
-	//	panic(err)
-	//}
+	err = validator.Init()
+	if err != nil {
+		panic(err)
+	}
 
 	catsRepo := repos.NewGenericRepo[model.SpyCat](db)
 	spyCatHandler := handlers.NewCatHandler(controller.NewSpyCatController(catsRepo, validator))

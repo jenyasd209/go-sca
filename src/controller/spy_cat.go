@@ -36,9 +36,9 @@ func NewSpyCatController(r Repository[model.SpyCat], validator BreedValidator) *
 }
 
 func (scc *SpyCatController) Create(cat *model.SpyCat) error {
-	//if !scc.bv.Validate(cat.Breed) {
-	//	return ErrUnsupportedBreed
-	//}
+	if !scc.bv.Validate(cat.Breed) {
+		return ErrUnsupportedBreed
+	}
 
 	return scc.repo.Create(cat)
 }

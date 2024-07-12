@@ -39,7 +39,6 @@ func TestName(t *testing.T) {
 				Notes:     "some notes; and some more",
 				Completed: false,
 				MissionID: 0,
-				Mission:   nil,
 			},
 		},
 		Completed: false,
